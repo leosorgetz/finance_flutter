@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'colors/app_colors_dark.dart';
 import 'custom_theme_colors.dart';
@@ -29,6 +30,7 @@ class AppDarkTheme {
       unselectedWidgetColor: _appColors.neutral60,
       fontFamily: 'Lato',
       iconTheme: IconThemeData(color: _appColors.textPrimary),
+      textTheme: GoogleFonts.latoTextTheme(),
     );
   }
 }

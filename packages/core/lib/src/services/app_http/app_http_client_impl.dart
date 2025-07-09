@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart';
 
-import '../failures/failures.dart';
+import '../app_failures/app_failures.dart';
 import 'app_http_client.dart';
 import 'app_response.dart';
 
@@ -26,7 +26,7 @@ class AppHttpClientImpl implements AppHttpClient {
         statusCode: res.statusCode,
       );
     } catch (_) {
-      throw HttpFailure(_defaultMessage);
+      throw AppHttpFailure(_defaultMessage);
     }
   }
 
@@ -47,7 +47,7 @@ class AppHttpClientImpl implements AppHttpClient {
         statusCode: res.statusCode,
       );
     } catch (_) {
-      throw HttpFailure(_defaultMessage);
+      throw AppHttpFailure(_defaultMessage);
     }
   }
 
@@ -68,7 +68,7 @@ class AppHttpClientImpl implements AppHttpClient {
         statusCode: res.statusCode,
       );
     } catch (_) {
-      throw HttpFailure(_defaultMessage);
+      throw AppHttpFailure(_defaultMessage);
     }
   }
 
@@ -88,7 +88,7 @@ class AppHttpClientImpl implements AppHttpClient {
         statusCode: res.statusCode,
       );
     } catch (_) {
-      throw HttpFailure(_defaultMessage);
+      throw AppHttpFailure(_defaultMessage);
     }
   }
 
@@ -109,7 +109,7 @@ class AppHttpClientImpl implements AppHttpClient {
         statusCode: res.statusCode,
       );
     } catch (_) {
-      throw HttpFailure(_defaultMessage);
+      throw AppHttpFailure(_defaultMessage);
     }
   }
 }

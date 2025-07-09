@@ -7,6 +7,6 @@ class AppFailure implements Exception {
   String toString() => 'UnkownFailure: $message';
 }
 
-class HttpFailure extends AppFailure {
-  HttpFailure([super.message = 'Network error occurred.']);
+class AppHttpFailure extends AppFailure {
+  AppHttpFailure([super.message = 'Network error occurred.']);
 }
