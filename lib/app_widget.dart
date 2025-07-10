@@ -1,6 +1,6 @@
 import 'package:core/core.dart';
 import 'package:ds/ds.dart';
-import 'package:finance_app/src/presentation/home/home_page.dart';
+import 'package:finance_app/router/root_router.dart';
 import 'package:finance_app/src/shared/stores/app_theme_store.dart';
 import 'package:flutter/material.dart';
 
@@ -17,9 +17,11 @@ class AppWidget extends StatelessWidget {
       valueListenable: appThemeStore.themeNotifier,
       builder: (context, themeMode, _) {
         return MaterialApp(
-          title: 'Flutter Demo',
+          title: 'Finance App',
           theme: themeMode == ThemeMode.light ? appLightTheme.getTheme : appDarkTheme.getTheme,
-          home: const HomePage(),
+          initialRoute: AppRootRouter.initialRoute,
+          onGenerateInitialRoutes: (String initialRouteName) => AppRootRouter.onGenerateInitialRoutes(initialRouteName),
+          onGenerateRoute: AppRootRouter.onGenerateRoute,
         );
       },
     );
