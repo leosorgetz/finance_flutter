@@ -1,4 +1,5 @@
 import 'package:core/core.dart';
+
 import 'app_module_service_locator.dart';
 
 class RootServiceLocator implements AppServiceLocatorModule {

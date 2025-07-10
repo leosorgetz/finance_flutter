@@ -1,4 +1,4 @@
-import 'package:finance_app/root_service_locator.dart';
+import 'package:finance_app/di/root_service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 

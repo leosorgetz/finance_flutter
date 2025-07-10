@@ -1,0 +1,53 @@
+name: Workflow Example
+
+on:
+  workflow_dispatch:
+    inputs:
+      env_type:
+        description: 'Flavor to build for'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+          - dev
+
+jobs:
+  build:
+    #    runs-on: macos-latest
+    runs-on: ubuntu-latest
+    env:
+      ENV_TYPE: ${{ github.event.inputs.env_type }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.27.4'
+          cache: true
+
+      - name: Flutter pub get
+        run: sh scripts/get.sh
+
+      - name: Flutter analyze
+        run: flutter analyze
+
+      - name: Flutter test
+        run: flutter test
+
+      - name: Build App
+        run: flutter build apk --release -t lib/main.dart
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app
+          path: build/app/outputs/flutter-apk/app.aab
+
+      - name: Upload Symbols
+        uses: actions/upload-artifact@v4
+        with:
+          name: symbols
+          path: build/app/app_symbols/
