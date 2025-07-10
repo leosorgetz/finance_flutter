@@ -31,6 +31,20 @@ class AppLightTheme {
       fontFamily: 'Lato',
       iconTheme: IconThemeData(color: _appColors.textPrimary),
       textTheme: GoogleFonts.latoTextTheme(),
+      inputDecorationTheme: InputDecorationTheme(
+        labelStyle: TextStyle(fontSize: 16, color: _appColors.textSecondary),
+        focusColor: _appColors.primary,
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide(color: _appColors.neutral30, width: 1),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide(color: _appColors.neutral40, width: 1),
+        ),
+        filled: true,
+        fillColor: _appColors.neutral20,
+      ),
     );
   }
 }

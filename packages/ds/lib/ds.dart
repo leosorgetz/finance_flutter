@@ -1,5 +1,6 @@
-export 'src/components/app_button/app_button.dart';
-export 'src/components/app_text/app_text.dart';
+export 'src/widgets/app_button/app_button.dart';
+export 'src/widgets/app_text/app_text.dart';
+export 'src/widgets/app_input/app_input.dart';
 export 'src/themes/colors/app_colors.dart';
 export 'src/themes/app_dark_theme.dart';
 export 'src/themes/app_light_theme.dart';

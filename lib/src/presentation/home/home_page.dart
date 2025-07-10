@@ -18,7 +18,8 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const AppText.titleSm('You have pushed the button this many times:'),
-            AppButton(text: 'Clicar', onPressed: () {}),
+            AppButton.primary(text: 'Clicar', onPressed: () {}),
+            AppButton.secondary(text: 'Clicar', onPressed: () {}),
           ],
         ),
       ),
