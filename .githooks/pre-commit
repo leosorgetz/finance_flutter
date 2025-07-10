@@ -1,0 +1,23 @@
+#!/bin/sh
+
+echo "Running dart format..."
+dart format lib --line-length 120
+dart format package/core --line-length 120
+dart format package/design_system --line-length 120
+
+echo "Running flutter analyze..."
+flutter analyze
+if [ $? -ne 0 ]; then
+   echo "flutter analyze failed, aborting commit."
+   exit 1
+fi
+
+# Enable after add tests
+#echo "Running flutter test..."
+#flutter test
+#if [ $? -ne 0 ]; then
+#   echo "flutter test failed, aborting commit."
+#   exit 1
+#fi
+#
+#echo "All checks passed, committing."
