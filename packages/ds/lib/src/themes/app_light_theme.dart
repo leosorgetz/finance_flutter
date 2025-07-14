@@ -1,4 +1,5 @@
 import 'package:ds/src/themes/colors/app_colors_light.dart';
+import 'package:ds/src/typography/app_typography.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -32,7 +33,7 @@ class AppLightTheme {
       iconTheme: IconThemeData(color: _appColors.textPrimary),
       textTheme: GoogleFonts.latoTextTheme(),
       inputDecorationTheme: InputDecorationTheme(
-        labelStyle: TextStyle(fontSize: 16, color: _appColors.textSecondary),
+        labelStyle: AppTypography.input,
         focusColor: _appColors.primary,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),

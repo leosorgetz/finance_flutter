@@ -1,4 +1,5 @@
 import 'package:core/core.dart';
+import 'package:finance_app/src/presentation/home/home_controller.dart';
 import 'package:finance_app/src/shared/stores/app_theme_store.dart';
 
 class AppModuleServiceLocator implements AppServiceLocatorModule {
@@ -17,5 +18,7 @@ class AppModuleServiceLocator implements AppServiceLocatorModule {
   Future<void> registerBusiness() async {}
 
   @override
-  Future<void> registerPresentation() async {}
+  Future<void> registerPresentation() async {
+    sl.registerFactory<HomeController>(() => HomeController());
+  }
 }

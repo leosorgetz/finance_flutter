@@ -28,6 +28,10 @@ class AppRootRouter {
     //     AppRootRouter.onGenerateRoute(RouteSettings(name: AppRouter.home)),
     //   ];
     // }
-    return <Route<void>>[AppRootRouter.onGenerateRoute(RouteSettings(name: initialRouteName))];
+
+    return <Route<void>>[
+      AppRootRouter.onGenerateRoute(RouteSettings(name: AppRouter.home)),
+    ];
+    // return <Route<void>>[AppRootRouter.onGenerateRoute(RouteSettings(name: initialRouteName))];
   }
 }

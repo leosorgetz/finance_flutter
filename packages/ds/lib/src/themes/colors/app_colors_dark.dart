@@ -32,4 +32,6 @@ class AppColorsDark implements AppColors {
   Color neutral60 = Color(0xFF494A49);
   @override
   Color neutral70 = Color(0xFF0F0F0F);
+  @override
+  Color background = Color(0xFFEFF0EF);
 }

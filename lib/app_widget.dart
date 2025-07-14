@@ -17,6 +17,7 @@ class AppWidget extends StatelessWidget {
       valueListenable: appThemeStore.themeNotifier,
       builder: (context, themeMode, _) {
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           title: 'Finance App',
           theme: themeMode == ThemeMode.light ? appLightTheme.getTheme : appDarkTheme.getTheme,
           initialRoute: AppRootRouter.initialRoute,
