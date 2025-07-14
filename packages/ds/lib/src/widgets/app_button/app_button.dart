@@ -1,5 +1,4 @@
 import 'package:ds/ds.dart';
-import 'package:ds/src/typography/app_typography.dart';
 import 'package:flutter/material.dart';
 
 enum AppButtonType { primary, secondary }

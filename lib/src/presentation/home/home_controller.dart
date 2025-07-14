@@ -1,7 +1,7 @@
 import 'package:finance_app/src/shared/state/state.dart';
 import 'package:mobx/mobx.dart';
 
-import 'models/month_value.dart';
+import '../../models/month_value.dart';
 
 part 'home_controller.g.dart';
 
@@ -116,7 +116,7 @@ abstract class HomeControllerBase with Store {
     ),
     MonthValue(
       month: 'JAN',
-      period: DateTime(2025, 1),
+      period: DateTime(2026, 1),
       availableValue: 1000.0,
       usedValue: 500.0,
       limitValue: 1500.0,

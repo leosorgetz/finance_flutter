@@ -2,12 +2,13 @@ import 'dart:developer';
 
 import 'package:core/core.dart';
 import 'package:ds/ds.dart';
+import 'package:finance_app/src/presentation/home/widgets/card_value_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
+import '../../models/month_value.dart';
 import '../../shared/state/state.dart';
 import 'home_controller.dart';
-import 'models/month_value.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -88,14 +89,15 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  AppText.titleSm('${monthValues.period.month}/${monthValues.period.year}'),
-                                  SizedBox(height: 8.0),
-                                  AppText.textSm('Disponível: R\$ ${monthValues.availableValue.toStringAsFixed(2)}'),
-                                  AppText.textSm('Usado: R\$ ${monthValues.usedValue.toStringAsFixed(2)}'),
-                                  AppText.textSm('Limite: R\$ ${monthValues.limitValue.toStringAsFixed(2)}'),
-                                  SizedBox(height: 8.0),
-                                  if (monthValues.releases != null && monthValues.releases!.isNotEmpty)
-                                    ...monthValues.releases!.map((release) => AppText.textSm(release)),
+                                  CardValueWidget(
+                                    period: monthValues.period,
+                                    availableValue: monthValues.availableValue,
+                                    usedValue: monthValues.usedValue,
+                                    limitValue: monthValues.limitValue,
+                                    onPressedSettings: () {
+                                      log('Settings pressed for ${monthValues.month}');
+                                    },
+                                  ),
                                 ],
                               ),
                             ),

@@ -1,6 +1,7 @@
 export 'src/themes/app_dark_theme.dart';
 export 'src/themes/app_light_theme.dart';
 export 'src/themes/colors/app_colors.dart';
+export 'src/typography/app_typography.dart';
 export 'src/widgets/app_button/app_button.dart';
 export 'src/widgets/app_input/app_input.dart';
 export 'src/widgets/app_spacer/app_spacer.dart';

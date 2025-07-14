@@ -1,4 +1,3 @@
-import 'package:ds/src/typography/app_typography.dart';
 import 'package:dynamic_tabbar/dynamic_tabbar.dart';
 import 'package:flutter/material.dart';
 
