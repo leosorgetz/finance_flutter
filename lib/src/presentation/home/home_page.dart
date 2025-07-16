@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:core/core.dart';
 import 'package:ds/ds.dart';
 import 'package:finance_app/src/presentation/home/widgets/card_value_widget.dart';
+import 'package:finance_app/src/presentation/home/widgets/transactions_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
@@ -86,19 +87,25 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                             title: monthValues.month,
                             content: Container(
                               padding: EdgeInsets.all(pageDefaultPaddingSize),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  CardValueWidget(
-                                    period: monthValues.period,
-                                    availableValue: monthValues.availableValue,
-                                    usedValue: monthValues.usedValue,
-                                    limitValue: monthValues.limitValue,
-                                    onPressedSettings: () {
-                                      log('Settings pressed for ${monthValues.month}');
-                                    },
-                                  ),
-                                ],
+                              child: SingleChildScrollView(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    CardValueWidget(
+                                      period: monthValues.period,
+                                      availableValue: monthValues.availableValue,
+                                      usedValue: monthValues.usedValue,
+                                      limitValue: monthValues.limitValue,
+                                      onPressedSettings: () {
+                                        log('Settings pressed for ${monthValues.month}');
+                                      },
+                                    ),
+                                    AppSpacer.medium(),
+                                    TransactionsCardWidget(
+                                      transactions: monthValues.transactions,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           );

@@ -20,4 +20,5 @@ abstract class AppColors {
   late final Color neutral60;
   late final Color neutral70;
   late final Color background;
+  late final Color success;
 }

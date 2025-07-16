@@ -34,4 +34,6 @@ class AppColorsLight implements AppColors {
   Color neutral70 = Color(0xFF0F0F0F);
   @override
   Color background = Color(0xFFEFF0EF);
+  @override
+  Color success = Color(0xFF40AC61);
 }
